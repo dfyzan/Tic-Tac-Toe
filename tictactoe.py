@@ -1,4 +1,3 @@
-# impossible = False
 o_wins = False
 x_wins = False
 no_empty = False
@@ -65,8 +64,6 @@ def check_for_win():
 
 
 def printing_results():
-    # if is_impossible(x_win, o_win):
-    #     print('Impossible')
     o_win, x_win = check_for_win()
     if o_win:
         print('O wins')
@@ -74,18 +71,6 @@ def printing_results():
         print('X wins')
     elif there_is_no_empty():
         print('Draw')
-    else:
-        print('Game not finished')
-
-
-# def is_impossible(x_win, o_win):
-#     pos = position
-#     num_x = sum(x.count('X') for x in pos)
-#     num_o = sum(x.count('O') for x in pos)
-#     if x_win and o_win:
-#         return True
-#     if num_x - num_o >= 2 or num_o - num_x >= 2:
-#         return True
 
 
 def there_is_no_empty():
@@ -117,9 +102,6 @@ def is_valid(coordinates):
         return 'Non num'
 
 
-# print("Enter cells: > ", end='')
-# inp = input()
-
 # creating empty matrix
 position = creating_matrix('_________')
 code = 'ok'
@@ -127,11 +109,8 @@ code = 'ok'
 while not is_finished():
     if code == 'ok':
         print_position()
-
     coords = input('Enter the coordinates: > ')
-
     code = is_valid(coords)
-
     if code == 'Out of range':
         print('Coordinates should be from 1 to 3!')
     elif code == 'Non num':
@@ -147,7 +126,6 @@ while not is_finished():
             o_move = True
 
 print_position()
-
 printing_results()
 
 d = input()
